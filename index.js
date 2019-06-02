@@ -10,6 +10,9 @@ const membersRoute = require('./routes/api/member');
 // init middleware
 // app.use(logger);
 
+//request body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 //Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
