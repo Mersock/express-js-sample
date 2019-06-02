@@ -1,11 +1,14 @@
 //initail
 const express = require('express');
+const path = require('path');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 
 app.get('/', (req,res) => {
-    res.send('hello world');
+    console.log(path);
+    res.sendFile(path.join(__dirname,'public','index.html'));
 });
 
 //start at port
